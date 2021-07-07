@@ -35,9 +35,10 @@ Partial Class Main
         Me.Button_CustomCommands.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_CustomCommands.Location = New System.Drawing.Point(12, 327)
+        Me.Button_CustomCommands.Location = New System.Drawing.Point(10, 258)
+        Me.Button_CustomCommands.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button_CustomCommands.Name = "Button_CustomCommands"
-        Me.Button_CustomCommands.Size = New System.Drawing.Size(503, 137)
+        Me.Button_CustomCommands.Size = New System.Drawing.Size(440, 108)
         Me.Button_CustomCommands.TabIndex = 2
         Me.Button_CustomCommands.Text = "Custom commands"
         Me.Button_CustomCommands.UseVisualStyleBackColor = True
@@ -47,9 +48,10 @@ Partial Class Main
         Me.Button_Messages.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_Messages.Location = New System.Drawing.Point(12, 184)
+        Me.Button_Messages.Location = New System.Drawing.Point(10, 145)
+        Me.Button_Messages.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button_Messages.Name = "Button_Messages"
-        Me.Button_Messages.Size = New System.Drawing.Size(503, 137)
+        Me.Button_Messages.Size = New System.Drawing.Size(440, 108)
         Me.Button_Messages.TabIndex = 3
         Me.Button_Messages.Text = "Post messages"
         Me.Button_Messages.UseVisualStyleBackColor = True
@@ -59,9 +61,10 @@ Partial Class Main
         Me.Button_RemoteAccess.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button_RemoteAccess.Location = New System.Drawing.Point(12, 40)
+        Me.Button_RemoteAccess.Location = New System.Drawing.Point(10, 32)
+        Me.Button_RemoteAccess.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button_RemoteAccess.Name = "Button_RemoteAccess"
-        Me.Button_RemoteAccess.Size = New System.Drawing.Size(503, 137)
+        Me.Button_RemoteAccess.Size = New System.Drawing.Size(440, 108)
         Me.Button_RemoteAccess.TabIndex = 4
         Me.Button_RemoteAccess.Text = "Remote access"
         Me.Button_RemoteAccess.UseVisualStyleBackColor = True
@@ -72,26 +75,28 @@ Partial Class Main
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem_Settings})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(528, 28)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(5, 2, 0, 2)
+        Me.MenuStrip1.Size = New System.Drawing.Size(462, 24)
         Me.MenuStrip1.TabIndex = 5
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'ToolStripMenuItem_Settings
         '
         Me.ToolStripMenuItem_Settings.Name = "ToolStripMenuItem_Settings"
-        Me.ToolStripMenuItem_Settings.Size = New System.Drawing.Size(76, 24)
+        Me.ToolStripMenuItem_Settings.Size = New System.Drawing.Size(61, 20)
         Me.ToolStripMenuItem_Settings.Text = "Settings"
         '
         'Main
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(528, 476)
+        Me.ClientSize = New System.Drawing.Size(462, 376)
         Me.Controls.Add(Me.Button_RemoteAccess)
         Me.Controls.Add(Me.Button_Messages)
         Me.Controls.Add(Me.Button_CustomCommands)
         Me.Controls.Add(Me.MenuStrip1)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Main"
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()

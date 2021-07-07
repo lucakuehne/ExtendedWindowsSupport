@@ -8,19 +8,19 @@
     "net5.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\lucak_kwuqwve\\.nuget\\packages\\": {}
+    "C:\\Users\\Luca.Kuehne\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Projects\\.NET\\ExtendedWindowsSupport\\ExtendedWindowsSupport.vbproj",
+      "projectUniqueName": "C:\\Users\\Luca.Kuehne\\source\\repos\\ExtendedWindowsSupport\\ExtendedWindowsSupport.vbproj",
       "projectName": "ExtendedWindowsSupport",
-      "projectPath": "D:\\Projects\\.NET\\ExtendedWindowsSupport\\ExtendedWindowsSupport.vbproj",
-      "packagesPath": "C:\\Users\\lucak_kwuqwve\\.nuget\\packages\\",
-      "outputPath": "D:\\Projects\\.NET\\ExtendedWindowsSupport\\obj\\",
+      "projectPath": "C:\\Users\\Luca.Kuehne\\source\\repos\\ExtendedWindowsSupport\\ExtendedWindowsSupport.vbproj",
+      "packagesPath": "C:\\Users\\Luca.Kuehne\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Luca.Kuehne\\source\\repos\\ExtendedWindowsSupport\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\lucak_kwuqwve\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Luca.Kuehne\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
