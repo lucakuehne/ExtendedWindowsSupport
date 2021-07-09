@@ -22,8 +22,8 @@ Partial Class Settings
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim ListViewItem3 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"LS1", "192.168.2"}, -1)
-        Dim ListViewItem4 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"LS2", "192.168.2"}, -1)
+        Dim ListViewItem1 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"LS1", "LS1.softcash.ch"}, -1)
+        Dim ListViewItem2 As System.Windows.Forms.ListViewItem = New System.Windows.Forms.ListViewItem(New String() {"LS2", "LS2.softcash.ch"}, -1)
         Me.TabControl_Settings = New System.Windows.Forms.TabControl()
         Me.TabPage_Computers = New System.Windows.Forms.TabPage()
         Me.Label_Address = New System.Windows.Forms.Label()
@@ -116,7 +116,7 @@ Partial Class Settings
         Me.ListView_Computers.GridLines = True
         Me.ListView_Computers.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
         Me.ListView_Computers.HideSelection = False
-        Me.ListView_Computers.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem3, ListViewItem4})
+        Me.ListView_Computers.Items.AddRange(New System.Windows.Forms.ListViewItem() {ListViewItem1, ListViewItem2})
         Me.ListView_Computers.Location = New System.Drawing.Point(7, 7)
         Me.ListView_Computers.Name = "ListView_Computers"
         Me.ListView_Computers.Size = New System.Drawing.Size(762, 336)

@@ -4,7 +4,7 @@
     <Compile Update="Main.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RemoteAccess.vb">
+    <Compile Update="Messaging.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Settings.vb">
