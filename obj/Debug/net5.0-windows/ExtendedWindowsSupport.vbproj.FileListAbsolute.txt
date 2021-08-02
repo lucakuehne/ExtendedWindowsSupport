@@ -1,7 +1,5 @@
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.vbproj.AssemblyReference.cache
-D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Form1.en-US-posix.resources
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Main.resources
-D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.RemoteAccess.resources
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.vbproj.GenerateResource.cache
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.AssemblyInfoInputs.cache
@@ -18,3 +16,5 @@ D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindows
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ref\ExtendedWindowsSupport.dll
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.pdb
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.genruntimeconfig.cache
+D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Settings.resources
+D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Messaging.resources

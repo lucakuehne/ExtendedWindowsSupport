@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class RemoteAccess
+Partial Class Messaging
     Inherits System.Windows.Forms.Form
 
     'Das Formular überschreibt den Löschvorgang, um die Komponentenliste zu bereinigen.
@@ -27,6 +27,8 @@ Partial Class RemoteAccess
         Me.Button_AddTarget = New System.Windows.Forms.Button()
         Me.TreeView_AvailableTargets = New System.Windows.Forms.TreeView()
         Me.TreeView_SelectedTargets = New System.Windows.Forms.TreeView()
+        Me.RichTextBox_Message = New System.Windows.Forms.RichTextBox()
+        Me.Button_SendMessage = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label_AvailableTargets
@@ -72,18 +74,37 @@ Partial Class RemoteAccess
         Me.TreeView_SelectedTargets.Size = New System.Drawing.Size(422, 442)
         Me.TreeView_SelectedTargets.TabIndex = 8
         '
-        'RemoteAccess
+        'RichTextBox_Message
+        '
+        Me.RichTextBox_Message.Location = New System.Drawing.Point(12, 485)
+        Me.RichTextBox_Message.Name = "RichTextBox_Message"
+        Me.RichTextBox_Message.Size = New System.Drawing.Size(832, 86)
+        Me.RichTextBox_Message.TabIndex = 9
+        Me.RichTextBox_Message.Text = ""
+        '
+        'Button_SendMessage
+        '
+        Me.Button_SendMessage.Location = New System.Drawing.Point(850, 485)
+        Me.Button_SendMessage.Name = "Button_SendMessage"
+        Me.Button_SendMessage.Size = New System.Drawing.Size(82, 86)
+        Me.Button_SendMessage.TabIndex = 10
+        Me.Button_SendMessage.Text = "Send Message"
+        Me.Button_SendMessage.UseVisualStyleBackColor = True
+        '
+        'Messaging
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(944, 491)
+        Me.ClientSize = New System.Drawing.Size(944, 583)
+        Me.Controls.Add(Me.Button_SendMessage)
+        Me.Controls.Add(Me.RichTextBox_Message)
         Me.Controls.Add(Me.TreeView_SelectedTargets)
         Me.Controls.Add(Me.TreeView_AvailableTargets)
         Me.Controls.Add(Me.Button_AddTarget)
         Me.Controls.Add(Me.Label_SelectedTargets)
         Me.Controls.Add(Me.Label_AvailableTargets)
-        Me.Name = "RemoteAccess"
-        Me.Text = "RemoteAccess"
+        Me.Name = "Messaging"
+        Me.Text = "Messaging"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -93,4 +114,6 @@ Partial Class RemoteAccess
     Friend WithEvents Button_AddTarget As Button
     Friend WithEvents TreeView_AvailableTargets As TreeView
     Friend WithEvents TreeView_SelectedTargets As TreeView
+    Friend WithEvents RichTextBox_Message As RichTextBox
+    Friend WithEvents Button_SendMessage As Button
 End Class
