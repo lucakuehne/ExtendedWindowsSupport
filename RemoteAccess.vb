@@ -6,32 +6,36 @@ Public Class RemoteAccess
         Dim AllComputers As List(Of Computer) = Computer.LoadComputers()
         TreeView_Computers.Nodes.Clear()
         For Each Computer As Computer In AllComputers
-            Dim tmpNode As TreeNode = TreeView_Computers.Nodes.Add(Computer.Address, Computer.Name)
-            Dim sessionQuery As New Process With {
-                .StartInfo = New ProcessStartInfo With {
-                    .FileName = "cmd.exe",
-                    .Arguments = "/c query session /SERVER:" & Computer.Address,
-                    .CreateNoWindow = True,
-                    .RedirectStandardOutput = True
-                }
-            }
-            sessionQuery.Start()
-            Dim ActiveKeywords As String() = {"Active", "Aktiv"}
-            Dim currentLine As Integer = 1
-            While Not sessionQuery.StandardOutput.EndOfStream
-                Dim sessionQueryLine As String = Trim(sessionQuery.StandardOutput.ReadLine())
-                If currentLine > 1 And sessionQueryLine.StartsWith("rdp-tcp") = False And sessionQueryLine.StartsWith("services") = False Then
-                    For Each activeKeyword In ActiveKeywords
-                        If sessionQueryLine.EndsWith(activeKeyword) Then
-                            Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
-                            tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & " (" & columns(3) & ")")
-                        End If
-                    Next
-                End If
-                currentLine += 1
-            End While
+            GetSessions(Computer)
         Next
         ComboBox_SessionConnectionMode.SelectedIndex = 0
+    End Sub
+
+    Private Sub GetSessions(Computer As Computer)
+        Dim tmpNode As TreeNode = TreeView_Computers.Nodes.Add(Computer.Address, Computer.Name)
+        Dim sessionQuery As New Process With {
+            .StartInfo = New ProcessStartInfo With {
+                .FileName = "cmd.exe",
+                .Arguments = "/c query session /SERVER:" & Computer.Address,
+                .CreateNoWindow = True,
+                .RedirectStandardOutput = True
+            }
+        }
+        sessionQuery.Start()
+        Dim ActiveKeywords As String() = {"Active", "Aktiv"}
+        Dim currentLine As Integer = 1
+        While Not sessionQuery.StandardOutput.EndOfStream
+            Dim sessionQueryLine As String = Trim(sessionQuery.StandardOutput.ReadLine())
+            If currentLine > 1 And sessionQueryLine.StartsWith("rdp-tcp") = False And sessionQueryLine.StartsWith("services") = False Then
+                For Each activeKeyword In ActiveKeywords
+                    If sessionQueryLine.EndsWith(activeKeyword) Then
+                        Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
+                        tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & " (" & columns(3) & ")")
+                    End If
+                Next
+            End If
+            currentLine += 1
+        End While
     End Sub
 
     Private Sub TreeView_Computers_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView_Computers.AfterSelect
