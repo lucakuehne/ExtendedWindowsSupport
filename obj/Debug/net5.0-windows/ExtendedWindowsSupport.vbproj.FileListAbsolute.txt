@@ -1,5 +1,4 @@
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.vbproj.AssemblyReference.cache
-D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Form1.en-US-posix.resources
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Main.resources
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.RemoteAccess.resources
 D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.vbproj.GenerateResource.cache
@@ -40,3 +39,6 @@ C:\Users\Luca.Kuehne\source\repos\ExtendedWindowsSupport\obj\Debug\net5.0-window
 C:\Users\Luca.Kuehne\source\repos\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.pdb
 C:\Users\Luca.Kuehne\source\repos\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.genruntimeconfig.cache
 C:\Users\Luca.Kuehne\source\repos\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Credentials.resources
+D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Credentials.resources
+D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Messaging.resources
+D:\Projects\.NET\ExtendedWindowsSupport\obj\Debug\net5.0-windows\ExtendedWindowsSupport.Settings.resources

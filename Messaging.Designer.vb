@@ -27,23 +27,26 @@ Partial Class Messaging
         Me.Button_AddTarget = New System.Windows.Forms.Button()
         Me.TreeView_AvailableTargets = New System.Windows.Forms.TreeView()
         Me.TreeView_SelectedTargets = New System.Windows.Forms.TreeView()
+        Me.Button_RemoveTarget = New System.Windows.Forms.Button()
+        Me.Button_SendMessage = New System.Windows.Forms.Button()
+        Me.RichTextBox_Message = New System.Windows.Forms.RichTextBox()
         Me.SuspendLayout()
         '
         'Label_AvailableTargets
         '
         Me.Label_AvailableTargets.AutoSize = True
-        Me.Label_AvailableTargets.Location = New System.Drawing.Point(10, 10)
+        Me.Label_AvailableTargets.Location = New System.Drawing.Point(11, 13)
         Me.Label_AvailableTargets.Name = "Label_AvailableTargets"
-        Me.Label_AvailableTargets.Size = New System.Drawing.Size(95, 15)
+        Me.Label_AvailableTargets.Size = New System.Drawing.Size(122, 20)
         Me.Label_AvailableTargets.TabIndex = 2
         Me.Label_AvailableTargets.Text = "Available Targets"
         '
         'Label_SelectedTargets
         '
         Me.Label_SelectedTargets.AutoSize = True
-        Me.Label_SelectedTargets.Location = New System.Drawing.Point(446, 10)
+        Me.Label_SelectedTargets.Location = New System.Drawing.Point(510, 13)
         Me.Label_SelectedTargets.Name = "Label_SelectedTargets"
-        Me.Label_SelectedTargets.Size = New System.Drawing.Size(91, 15)
+        Me.Label_SelectedTargets.Size = New System.Drawing.Size(117, 20)
         Me.Label_SelectedTargets.TabIndex = 5
         Me.Label_SelectedTargets.Text = "Selected Targets"
         '
@@ -51,41 +54,68 @@ Partial Class Messaging
         '
         Me.Button_AddTarget.Enabled = False
         Me.Button_AddTarget.Font = New System.Drawing.Font("Segoe UI", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
-        Me.Button_AddTarget.Location = New System.Drawing.Point(385, 123)
-        Me.Button_AddTarget.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button_AddTarget.Location = New System.Drawing.Point(440, 42)
         Me.Button_AddTarget.Name = "Button_AddTarget"
-        Me.Button_AddTarget.Size = New System.Drawing.Size(56, 157)
+        Me.Button_AddTarget.Size = New System.Drawing.Size(64, 164)
         Me.Button_AddTarget.TabIndex = 6
         Me.Button_AddTarget.Text = ">"
         Me.Button_AddTarget.UseVisualStyleBackColor = True
         '
         'TreeView_AvailableTargets
         '
-        Me.TreeView_AvailableTargets.Location = New System.Drawing.Point(10, 29)
-        Me.TreeView_AvailableTargets.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TreeView_AvailableTargets.Location = New System.Drawing.Point(11, 37)
         Me.TreeView_AvailableTargets.Name = "TreeView_AvailableTargets"
-        Me.TreeView_AvailableTargets.Size = New System.Drawing.Size(370, 350)
+        Me.TreeView_AvailableTargets.Size = New System.Drawing.Size(422, 442)
         Me.TreeView_AvailableTargets.TabIndex = 7
         '
         'TreeView_SelectedTargets
         '
-        Me.TreeView_SelectedTargets.Location = New System.Drawing.Point(446, 29)
-        Me.TreeView_SelectedTargets.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TreeView_SelectedTargets.Location = New System.Drawing.Point(510, 37)
         Me.TreeView_SelectedTargets.Name = "TreeView_SelectedTargets"
-        Me.TreeView_SelectedTargets.Size = New System.Drawing.Size(370, 350)
+        Me.TreeView_SelectedTargets.Size = New System.Drawing.Size(422, 353)
         Me.TreeView_SelectedTargets.TabIndex = 8
+        '
+        'Button_RemoveTarget
+        '
+        Me.Button_RemoveTarget.Enabled = False
+        Me.Button_RemoveTarget.Font = New System.Drawing.Font("Segoe UI", 22.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point)
+        Me.Button_RemoveTarget.Location = New System.Drawing.Point(439, 221)
+        Me.Button_RemoveTarget.Name = "Button_RemoveTarget"
+        Me.Button_RemoveTarget.Size = New System.Drawing.Size(64, 164)
+        Me.Button_RemoveTarget.TabIndex = 9
+        Me.Button_RemoveTarget.Text = "<"
+        Me.Button_RemoveTarget.UseVisualStyleBackColor = True
+        '
+        'Button_SendMessage
+        '
+        Me.Button_SendMessage.Location = New System.Drawing.Point(842, 396)
+        Me.Button_SendMessage.Name = "Button_SendMessage"
+        Me.Button_SendMessage.Size = New System.Drawing.Size(90, 83)
+        Me.Button_SendMessage.TabIndex = 10
+        Me.Button_SendMessage.Text = "Send"
+        Me.Button_SendMessage.UseVisualStyleBackColor = True
+        '
+        'RichTextBox_Message
+        '
+        Me.RichTextBox_Message.Location = New System.Drawing.Point(511, 397)
+        Me.RichTextBox_Message.Name = "RichTextBox_Message"
+        Me.RichTextBox_Message.Size = New System.Drawing.Size(325, 82)
+        Me.RichTextBox_Message.TabIndex = 11
+        Me.RichTextBox_Message.Text = ""
         '
         'Messaging
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 19.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(826, 388)
+        Me.ClientSize = New System.Drawing.Size(944, 491)
+        Me.Controls.Add(Me.RichTextBox_Message)
+        Me.Controls.Add(Me.Button_SendMessage)
+        Me.Controls.Add(Me.Button_RemoveTarget)
         Me.Controls.Add(Me.TreeView_SelectedTargets)
         Me.Controls.Add(Me.TreeView_AvailableTargets)
         Me.Controls.Add(Me.Button_AddTarget)
         Me.Controls.Add(Me.Label_SelectedTargets)
         Me.Controls.Add(Me.Label_AvailableTargets)
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "Messaging"
         Me.Text = "Messaging"
         Me.ResumeLayout(False)
@@ -97,4 +127,7 @@ Partial Class Messaging
     Friend WithEvents Button_AddTarget As Button
     Friend WithEvents TreeView_AvailableTargets As TreeView
     Friend WithEvents TreeView_SelectedTargets As TreeView
+    Friend WithEvents Button_RemoveTarget As Button
+    Friend WithEvents Button_SendMessage As Button
+    Friend WithEvents RichTextBox_Message As RichTextBox
 End Class

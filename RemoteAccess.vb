@@ -2,18 +2,8 @@
 
 Public Class RemoteAccess
 
-    Private Sub RemoteAccess_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim tmp1 As New Computer With {
-           .Name = "LW1",
-           .Address = "LW1.softcash.ch"
-        }
-        Dim tmp2 As New Computer With {
-           .Name = "LW2",
-           .Address = "LW2.softcash.ch"
-        }
-        Dim AllComputers As New List(Of Computer)
-        AllComputers.Add(tmp1)
-        AllComputers.Add(tmp2)
+    Private Sub RemoteAccess_Show(sender As Object, e As EventArgs) Handles MyBase.Shown
+        Dim AllComputers As List(Of Computer) = Computer.LoadComputers()
         TreeView_Computers.Nodes.Clear()
         For Each Computer As Computer In AllComputers
             Dim tmpNode As TreeNode = TreeView_Computers.Nodes.Add(Computer.Address, Computer.Name)
@@ -26,13 +16,17 @@ Public Class RemoteAccess
                 }
             }
             sessionQuery.Start()
-            sessionQuery.WaitForExit()
+            Dim ActiveKeywords As String() = {"Active", "Aktiv"}
             Dim currentLine As Integer = 1
             While Not sessionQuery.StandardOutput.EndOfStream
                 Dim sessionQueryLine As String = Trim(sessionQuery.StandardOutput.ReadLine())
                 If currentLine > 1 And sessionQueryLine.StartsWith("rdp-tcp") = False And sessionQueryLine.StartsWith("services") = False Then
-                    Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
-                    tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & "(" & columns(3) & ")")
+                    For Each activeKeyword In ActiveKeywords
+                        If sessionQueryLine.EndsWith(activeKeyword) Then
+                            Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
+                            tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & " (" & columns(3) & ")")
+                        End If
+                    Next
                 End If
                 currentLine += 1
             End While

@@ -3,10 +3,10 @@
 Public Class Credentials
     Public UseCurrentContext As Boolean = True
     Public Username As String
-    Public Password As Security.SecureString
+    Public Password As New Security.SecureString
 
     Private Sub Credentials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label_CurrentUser.Text = "(" & WindowsIdentity.GetCurrent().Name & ")"
+        Label_CurrentUser.Text = "(" & Environment.UserName & "@" & Environment.UserDomainName & ")"
     End Sub
 
     Private Sub RadioButton_DifferentUser_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton_DifferentUser.CheckedChanged
