@@ -10,9 +10,6 @@
     <Compile Update="Messaging.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="RemoteAccess.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="Settings.vb">
       <SubType>Form</SubType>
     </Compile>
