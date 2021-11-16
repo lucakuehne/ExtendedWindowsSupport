@@ -31,10 +31,13 @@ Public Class Main
         'End If
         proc.Start()
         Dim procStreamWriter As StreamWriter = proc.StandardInput
-        procStreamWriter.WriteLine(creds.Password)
+        procStreamWriter.WriteLine(creds.MaskedTextBox_Password.Text)
+        procStreamWriter.Close()
+        proc.WaitForExit()
     End Sub
 
     Private Sub Button_CustomCommands_Click(sender As Object, e As EventArgs) Handles Button_CustomCommands.Click
         Process.Start("cmd.exe")
     End Sub
+
 End Class

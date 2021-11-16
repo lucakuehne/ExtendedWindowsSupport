@@ -6,30 +6,32 @@ Public Class Messaging
         Dim AllComputers As List(Of Computer) = Computer.LoadComputers()
         TreeView_AvailableTargets.Nodes.Clear()
         For Each Computer As Computer In AllComputers
-            Dim tmpNode As TreeNode = TreeView_AvailableTargets.Nodes.Add(Computer.Address, Computer.Name)
-            Dim sessionQuery As New Process With {
-                .StartInfo = New ProcessStartInfo With {
-                    .FileName = "cmd.exe",
-                    .Arguments = "/c query session /SERVER:" & Computer.Address,
-                    .CreateNoWindow = True,
-                    .RedirectStandardOutput = True
+            If My.Computer.Network.Ping(Computer.Address, 300) Then
+                Dim tmpNode As TreeNode = TreeView_AvailableTargets.Nodes.Add(Computer.Address, Computer.Name)
+                Dim sessionQuery As New Process With {
+                    .StartInfo = New ProcessStartInfo With {
+                        .FileName = "cmd.exe",
+                        .Arguments = "/c query session /SERVER:" & Computer.Address,
+                        .CreateNoWindow = True,
+                        .RedirectStandardOutput = True
+                    }
                 }
-            }
-            sessionQuery.Start()
-            Dim ActiveKeywords As String() = {"Active", "Aktiv"}
-            Dim currentLine As Integer = 1
-            While Not sessionQuery.StandardOutput.EndOfStream
-                Dim sessionQueryLine As String = Trim(sessionQuery.StandardOutput.ReadLine())
-                If currentLine > 1 And sessionQueryLine.StartsWith("rdp-tcp") = False And sessionQueryLine.StartsWith("services") = False Then
-                    For Each activeKeyword In ActiveKeywords
-                        If sessionQueryLine.EndsWith(activeKeyword) Then
-                            Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
-                            tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & " (" & columns(3) & ")")
-                        End If
-                    Next
-                End If
-                currentLine += 1
-            End While
+                sessionQuery.Start()
+                Dim ActiveKeywords As String() = {"Active", "Aktiv"}
+                Dim currentLine As Integer = 1
+                While Not sessionQuery.StandardOutput.EndOfStream
+                    Dim sessionQueryLine As String = Trim(sessionQuery.StandardOutput.ReadLine())
+                    If currentLine > 1 And sessionQueryLine.StartsWith("rdp-tcp") = False And sessionQueryLine.StartsWith("services") = False Then
+                        For Each activeKeyword In ActiveKeywords
+                            If sessionQueryLine.EndsWith(activeKeyword) Then
+                                Dim columns As String() = Regex.Split(sessionQueryLine, "\s+")
+                                tmpNode.Nodes.Add(columns(2), columns(1) & " @ " & columns(0) & " (Session ID: " & columns(2) & ")" & " (" & columns(3) & ")")
+                            End If
+                        Next
+                    End If
+                    currentLine += 1
+                End While
+            End If
         Next
         TreeView_AvailableTargets.ExpandAll()
         TreeView_SelectedTargets.ExpandAll()
