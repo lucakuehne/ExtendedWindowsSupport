@@ -6,7 +6,9 @@ Public Class RemoteAccess
         Dim AllComputers As List(Of Computer) = Computer.LoadComputers()
         TreeView_Computers.Nodes.Clear()
         For Each Computer As Computer In AllComputers
-            GetSessions(Computer)
+            If My.Computer.Network.Ping(Computer.Address, 300) Then
+                GetSessions(Computer)
+            End If
         Next
         ComboBox_SessionConnectionMode.SelectedIndex = 0
     End Sub
