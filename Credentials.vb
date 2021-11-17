@@ -4,6 +4,7 @@ Public Class Credentials
     Public UseCurrentContext As Boolean = True
     Public Username As String
     Public Password As New Security.SecureString
+    Public PasswordPlain As String
 
     Private Sub Credentials_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Label_CurrentUser.Text = "(" & Environment.UserName & "@" & Environment.UserDomainName & ")"
@@ -22,6 +23,7 @@ Public Class Credentials
         For Each c In MaskedTextBox_Password.Text
             Password.AppendChar(c)
         Next
+        PasswordPlain = MaskedTextBox_Password.Text
         Me.Close()
     End Sub
 

@@ -33,6 +33,7 @@ Partial Class Settings
         Me.ColumnHeader_DisplayName = New System.Windows.Forms.ColumnHeader()
         Me.ColumnHeader_Address = New System.Windows.Forms.ColumnHeader()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Button_RemoveComputer = New System.Windows.Forms.Button()
         Me.TabControl_Settings.SuspendLayout()
         Me.TabPage_Computers.SuspendLayout()
         Me.SuspendLayout()
@@ -50,6 +51,7 @@ Partial Class Settings
         '
         'TabPage_Computers
         '
+        Me.TabPage_Computers.Controls.Add(Me.Button_RemoveComputer)
         Me.TabPage_Computers.Controls.Add(Me.Label_Address)
         Me.TabPage_Computers.Controls.Add(Me.Label_DisplayName)
         Me.TabPage_Computers.Controls.Add(Me.TextBox_Address)
@@ -101,10 +103,10 @@ Partial Class Settings
         '
         'Button_AddComputer
         '
-        Me.Button_AddComputer.Location = New System.Drawing.Point(682, 442)
+        Me.Button_AddComputer.Location = New System.Drawing.Point(682, 462)
         Me.Button_AddComputer.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button_AddComputer.Name = "Button_AddComputer"
-        Me.Button_AddComputer.Size = New System.Drawing.Size(193, 52)
+        Me.Button_AddComputer.Size = New System.Drawing.Size(193, 32)
         Me.Button_AddComputer.TabIndex = 1
         Me.Button_AddComputer.Text = "Add Computer"
         Me.Button_AddComputer.UseVisualStyleBackColor = True
@@ -121,8 +123,9 @@ Partial Class Settings
         Me.ListView_Computers.HideSelection = False
         Me.ListView_Computers.Location = New System.Drawing.Point(8, 9)
         Me.ListView_Computers.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.ListView_Computers.MultiSelect = False
         Me.ListView_Computers.Name = "ListView_Computers"
-        Me.ListView_Computers.Size = New System.Drawing.Size(870, 425)
+        Me.ListView_Computers.Size = New System.Drawing.Size(870, 405)
         Me.ListView_Computers.TabIndex = 0
         Me.ListView_Computers.UseCompatibleStateImageBehavior = False
         Me.ListView_Computers.View = System.Windows.Forms.View.Details
@@ -147,6 +150,17 @@ Partial Class Settings
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "TabPage2"
         Me.TabPage2.UseVisualStyleBackColor = True
+        '
+        'Button_RemoveComputer
+        '
+        Me.Button_RemoveComputer.Enabled = False
+        Me.Button_RemoveComputer.Location = New System.Drawing.Point(682, 422)
+        Me.Button_RemoveComputer.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button_RemoveComputer.Name = "Button_RemoveComputer"
+        Me.Button_RemoveComputer.Size = New System.Drawing.Size(193, 32)
+        Me.Button_RemoveComputer.TabIndex = 6
+        Me.Button_RemoveComputer.Text = "Remove Computer"
+        Me.Button_RemoveComputer.UseVisualStyleBackColor = True
         '
         'Settings
         '
@@ -175,4 +189,5 @@ Partial Class Settings
     Friend WithEvents Label_DisplayName As Label
     Friend WithEvents ColumnHeader_DisplayName As ColumnHeader
     Friend WithEvents ColumnHeader_Address As ColumnHeader
+    Friend WithEvents Button_RemoveComputer As Button
 End Class

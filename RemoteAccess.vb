@@ -49,49 +49,54 @@ Public Class RemoteAccess
     End Sub
 
     Private Sub Button_ConnectSession_Click(sender As Object, e As EventArgs) Handles Button_ConnectSession.Click
-        Dim connectionCommand As String = "/V:" & TreeView_Computers.SelectedNode.Parent.Name & " /shadow:" & TreeView_Computers.SelectedNode.Name
+        Dim connectionCommand As String = ControlChars.Quote & "mstsc.exe /V:" & TreeView_Computers.SelectedNode.Parent.Name & " /shadow:" & TreeView_Computers.SelectedNode.Name
         If ComboBox_SessionConnectionMode.SelectedIndex = 0 Then
-            connectionCommand = connectionCommand & " /control"
+            connectionCommand &= " /control"
         ElseIf ComboBox_SessionConnectionMode.SelectedIndex = 2 Then
-            connectionCommand = connectionCommand & " /control /noconsentprompt"
+            connectionCommand &= " /control /noconsentprompt"
         ElseIf ComboBox_SessionConnectionMode.SelectedIndex = 3 Then
-            connectionCommand = connectionCommand & " /noconsentprompt"
+            connectionCommand &= " /noconsentprompt"
         End If
-        ' HIER NOCH ABFRAGE BZGL. DES USERS
-        Dim creds As New Credentials
-        creds.ShowDialog()
-        Dim sessionQuery As New Process With {
+        connectionCommand &= ControlChars.Quote
+        'Dim creds As New Credentials
+        'creds.ShowDialog()
+        Dim remoteConnection As New Process With {
             .StartInfo = New ProcessStartInfo With {
-                .FileName = "mstsc.exe",
-                .Arguments = connectionCommand,
+                .FileName = "cmd.exe",
                 .CreateNoWindow = True,
                 .RedirectStandardOutput = True
             }
         }
-        If creds.UseCurrentContext = False Then
-            sessionQuery.StartInfo.UserName = creds.Username
-            sessionQuery.StartInfo.Password = creds.Password
-        End If
-        sessionQuery.Start()
+        'If creds.UseCurrentContext = False Then
+        '    remoteConnection.StartInfo.Arguments = "/k runas /user:" & creds.Username & " /netonly " & connectionCommand
+        '    remoteConnection.Start()
+        '    remoteConnection.StandardInput.WriteLine(creds.PasswordPlain)
+        '    remoteConnection.WaitForExit()
+        'Else
+        remoteConnection.StartInfo.Arguments = "/k " & connectionCommand
+            remoteConnection.Start()
+        'End If
     End Sub
 
     Private Sub Button_ConnectComputer_Click(sender As Object, e As EventArgs) Handles Button_ConnectComputer.Click
-        ' HIER NOCH ABFRAGE BZGL. DES USERS
-        Dim creds As New Credentials
-        creds.ShowDialog()
-        Dim sessionQuery As New Process With {
+        'Dim creds As New Credentials
+        'creds.ShowDialog()
+        Dim remoteConnection As New Process With {
             .StartInfo = New ProcessStartInfo With {
-                .FileName = "mstsc.exe",
-                .Arguments = "/V:" & TreeView_Computers.SelectedNode.Name,
+                .FileName = "cmd.exe",
                 .CreateNoWindow = True,
                 .RedirectStandardOutput = True
             }
         }
-        If creds.UseCurrentContext = False Then
-            sessionQuery.StartInfo.UserName = creds.Username
-            sessionQuery.StartInfo.Password = creds.Password
-        End If
-        sessionQuery.Start()
+        'If creds.UseCurrentContext = False Then
+        '    remoteConnection.StartInfo.Arguments = "/k runas /user:" & creds.Username & " /netonly " & ControlChars.Quote & "mstsc.exe /V:" & TreeView_Computers.SelectedNode.Name & ControlChars.Quote
+        '    remoteConnection.Start()
+        '    remoteConnection.StandardInput.WriteLine(creds.PasswordPlain)
+        '    remoteConnection.WaitForExit()
+        'Else
+        remoteConnection.StartInfo.Arguments = "/k mstsc.exe /V:" & TreeView_Computers.SelectedNode.Name
+            remoteConnection.Start()
+        'End If
     End Sub
 
 End Class
