@@ -8,6 +8,9 @@ Public Class RemoteAccess
         For Each Computer As Computer In AllComputers
             If My.Computer.Network.Ping(Computer.Address, 300) Then
                 GetSessions(Computer)
+            Else
+                Dim tmpNode As TreeNode = TreeView_Computers.Nodes.Add(Computer.Address, Computer.Name & " (Offline)")
+                tmpNode.ForeColor = SystemColors.GrayText
             End If
         Next
         ComboBox_SessionConnectionMode.SelectedIndex = 0
@@ -38,6 +41,12 @@ Public Class RemoteAccess
             End If
             currentLine += 1
         End While
+    End Sub
+
+    Private Sub TreeView_Computers_BeforeSelect(sender As Object, e As TreeViewCancelEventArgs) Handles TreeView_Computers.BeforeSelect
+        If e.Node.ForeColor = SystemColors.GrayText Then
+            e.Cancel = True
+        End If
     End Sub
 
     Private Sub TreeView_Computers_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView_Computers.AfterSelect

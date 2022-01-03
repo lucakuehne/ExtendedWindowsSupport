@@ -64,7 +64,7 @@ Partial Class RemoteAccess
         Me.ComboBox_SessionConnectionMode.Enabled = False
         Me.ComboBox_SessionConnectionMode.FormattingEnabled = True
         Me.ComboBox_SessionConnectionMode.ImeMode = System.Windows.Forms.ImeMode.Off
-        Me.ComboBox_SessionConnectionMode.Items.AddRange(New Object() {"✔ Control | ✔ User-Consent (Recommended)", "✖ Control | ✔ User-Consent", "✔ Control | ✖ User-Consent", "✖ Control | ✖ User-Consent"})
+        Me.ComboBox_SessionConnectionMode.Items.AddRange(New Object() {"✔ Control | ✔ User-Consent (Recommended)", "⛔ Control | ✔ User-Consent", "✔ Control | ⛔ User-Consent", "⛔ Control | ⛔ User-Consent"})
         Me.ComboBox_SessionConnectionMode.Location = New System.Drawing.Point(215, 612)
         Me.ComboBox_SessionConnectionMode.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.ComboBox_SessionConnectionMode.Name = "ComboBox_SessionConnectionMode"

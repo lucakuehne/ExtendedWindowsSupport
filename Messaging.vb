@@ -31,10 +31,19 @@ Public Class Messaging
                     End If
                     currentLine += 1
                 End While
+            Else
+                Dim tmpNode As TreeNode = TreeView_AvailableTargets.Nodes.Add(Computer.Address, Computer.Name & " (Offline)")
+                tmpNode.ForeColor = SystemColors.GrayText
             End If
         Next
         TreeView_AvailableTargets.ExpandAll()
         TreeView_SelectedTargets.ExpandAll()
+    End Sub
+
+    Private Sub TreeView_Computers_BeforeSelect(sender As Object, e As TreeViewCancelEventArgs) Handles TreeView_AvailableTargets.BeforeSelect
+        If e.Node.ForeColor = SystemColors.GrayText Then
+            e.Cancel = True
+        End If
     End Sub
 
     Private Sub TreeView_AvailableTargets_AfterSelect(sender As Object, e As TreeViewEventArgs) Handles TreeView_AvailableTargets.AfterSelect
